@@ -1,0 +1,37 @@
+run_mode: debug
+addr: :30011
+name: friendcycle
+url: http://127.0.0.1:30011
+max_ping_count: 10
+jwt_secret_user: Rtg8BPKNEf2mB4mgvKONGPZZQSaJWNLijxR42qRgq0iBb5
+jwt_secret_admin: TrsBPKNEf2mB4mgvKKONGPZZQSaJWNLijxR42qRgq4EwqA
+
+logger:
+  writers: file,stdout
+  logger_level: DEBUG
+  logger_file: logs/friendcycle.log
+  log_format_text: false
+  rollingPolicy: size
+  log_rotate_date: 1
+  log_rotate_size: 50
+  log_backup_count: 7
+
+db_write:
+  schema: friendcycle
+  host: localhost
+  port: 3306
+  username: user
+  password:
+
+db_read:
+  schema: friendcycle
+  host: localhost
+  port: 3306
+  username: user
+  password:
+
+redis:
+  host: 127.0.0.1:6379
+  index: 0
+  pool_size: 10
+  pass:
